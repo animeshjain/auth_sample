@@ -29,4 +29,32 @@ Android setup:
 
 iOS setup:
 - create an oauth 2.0 client id for iOS in cloud console
+- add reversed client id to the info.plist
+  - ```
+    <!-- Google Sign-in Section -->
+    <key>CFBundleURLTypes</key>
+    <array>
+    	<dict>
+    		<key>CFBundleTypeRole</key>
+    		<string>Editor</string>
+    		<key>CFBundleURLSchemes</key>
+    		<array>
+    			<!-- the _reversed_ CLIENT_ID from google cloud console -->
+    			<string>com.googleusercontent.apps.XXXYYY</string>
+    		</array>
+    	</dict>
+    </array>
+    ```
+- add client id to the GoogleSignIn constructor
+
+Web setup:
+- create an oauth 2.0 client id for web in cloud console
+  - http://localhost (without a port) must be included in origin, along with the actual one with port
+    - without adding this, `The given origin is not allowed for the given client ID (GSI)` was happening
+  - http://localhost:7357 the actual one being used for testing on local
+    - flutter can be configured to run the web build on a different port using `flutter run -d chrome --web-hostname localhost --web-port 7357`
+- add client id to the GoogleSignIn constructor (with conditional logic, as the ios client id will be different)
+
+Now the only thing remaining to be figured out is, how to vary the client id based on the flavor in the info.plist file.
+
 

@@ -21,8 +21,10 @@ const List<String> scopes = <String>[
   'openid',
 ];
 
-GoogleSignIn _googleSignIn = GoogleSignIn(
-  // Optional clientId
+GoogleSignIn _googleSignIn = kIsWeb ? GoogleSignIn(
+  clientId: '174301737822-27bm2m21ldefi6j04hs86ak018kguv4j.apps.googleusercontent.com',
+  scopes: scopes,
+) : GoogleSignIn(
   clientId: '174301737822-72tu3tjddb2t4681ittgrm5sro5a07vh.apps.googleusercontent.com',
   scopes: scopes,
 );
