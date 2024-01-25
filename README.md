@@ -17,3 +17,17 @@ Question: Can we just manually create OAuth credentials in cloud console without
 
 I am worried that entering this in Firebase console might get firebase to start billing this as a user!
 
+This blog post covers doing Google sign in setup without firebase:
+https://medium.com/codebrew/flutter-google-sign-in-without-firebase-3680713966fb
+
+In cloud console, consent screen has been setup.
+
+Android setup:
+- Create an oauth 2.0 client id for android (with the respective SHA1 fingerprint) in cloud console.
+- `flutter pub add google_sign_in`
+- and that's it! nothing needs to be changed in build.gradle
+
+iOS setup:
+- create an oauth 2.0 client id for iOS in cloud console
+  - 174301737822-72tu3tjddb2t4681ittgrm5sro5a07vh.apps.googleusercontent.com
+
