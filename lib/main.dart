@@ -23,7 +23,7 @@ const List<String> scopes = <String>[
 
 GoogleSignIn _googleSignIn = GoogleSignIn(
   // Optional clientId
-  // clientId: 'your-client_id.apps.googleusercontent.com',
+  clientId: '174301737822-72tu3tjddb2t4681ittgrm5sro5a07vh.apps.googleusercontent.com',
   scopes: scopes,
 );
 // #enddocregion Initialize

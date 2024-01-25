@@ -29,5 +29,4 @@ Android setup:
 
 iOS setup:
 - create an oauth 2.0 client id for iOS in cloud console
-  - 174301737822-72tu3tjddb2t4681ittgrm5sro5a07vh.apps.googleusercontent.com
 
